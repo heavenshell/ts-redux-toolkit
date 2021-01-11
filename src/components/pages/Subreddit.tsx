@@ -1,5 +1,4 @@
 import * as React from 'react'
-
 import { Button, Card, Form, Input, List } from 'antd'
 import { FormikConfig, FormikHelpers, FormikProps, useFormik } from 'formik'
 
@@ -48,7 +47,7 @@ const Subreddit: React.FC<Props> = ({
             colon={false}
             help={formik.touched.subreddit && formik.errors.subreddit}
             label="Subreddit"
-            required={true}
+            required
             validateStatus={
               formik.touched.subreddit && formik.errors.subreddit
                 ? 'error'
@@ -81,12 +80,18 @@ const Subreddit: React.FC<Props> = ({
             <List.Item
               key={item.title}
               extra={
-                item.thumbnail === '' ? undefined : <img src={item.thumbnail} />
+                item.thumbnail === '' ? undefined : (
+                  <img src={item.thumbnail} alt={item.title} />
+                )
               }
             >
               <List.Item.Meta
                 title={
-                  <a onClick={(event) => onLinkClick(event, item.permalink)}>
+                  <a // eslint-disable-line jsx-a11y/click-events-have-key-events
+                    onClick={(event) => onLinkClick(event, item.permalink)}
+                    role="link"
+                    tabIndex={0}
+                  >
                     {item.title}
                   </a>
                 }
