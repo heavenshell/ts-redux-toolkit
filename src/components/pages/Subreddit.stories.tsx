@@ -1,7 +1,6 @@
 import * as React from 'react'
 import * as yup from 'yup'
 import { FormikHelpers } from 'formik'
-
 import { action } from '@storybook/addon-actions'
 import { text } from '@storybook/addon-knobs'
 import { storiesOf } from '@storybook/react'
@@ -47,7 +46,7 @@ storiesOf('pages/Subreddit', module)
   .add('isLoading', () => (
     <Subreddit
       initialValues={{ subreddit: '' }}
-      isLoading={true}
+      isLoading
       onSubmit={handleSubmit()}
       validationSchema={validationSchema}
       posts={[]}

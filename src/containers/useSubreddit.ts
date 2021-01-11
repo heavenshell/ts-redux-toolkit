@@ -46,7 +46,7 @@ export const useSubredditHandlers = ({
       }
 
       const nextPath = `/subreddit?value=${data.subreddit}`
-      return history.push(nextPath)
+      history.push(nextPath)
     },
     [history, location]
   )
@@ -56,7 +56,7 @@ export const useSubredditHandlers = ({
       event.preventDefault()
       return window.open(`https://www.reddit.com/${permalink}`)
     },
-    [location]
+    []
   )
 
   return { onLinkClick, onSubmit }
@@ -75,7 +75,7 @@ const useSubredditEffect = ({
     if (value) {
       fetch(value)
     }
-  }, [value])
+  }, [fetch, value])
 }
 
 export const useSubreddit = ({
