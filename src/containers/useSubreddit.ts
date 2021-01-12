@@ -48,7 +48,7 @@ export const useSubredditHandlers = ({
       const nextPath = `/subreddit?value=${data.subreddit}`
       history.push(nextPath)
     },
-    [history, location]
+    [location] // eslint-disable-line react-hooks/exhaustive-deps
   )
 
   const onLinkClick = useCallback(
@@ -71,11 +71,12 @@ const useSubredditEffect = ({
   fetch,
 }: RouteComponentProps & UseSubredditEffectProps) => {
   const { value } = parse(search)
+
   useEffect(() => {
     if (value) {
       fetch(value)
     }
-  }, [fetch, value])
+  }, [value]) // eslint-disable-line react-hooks/exhaustive-deps
 }
 
 export const useSubreddit = ({
