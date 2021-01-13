@@ -9,20 +9,16 @@ import { Props as ViewProps } from '../components/pages/Subreddit'
 import { ReduxState } from '../modules'
 import { fetchSubreddit, queries, SubRedditModel } from '../modules/subreddit'
 
-export type MapProps = {
-  isLoading: boolean
-  posts?: any[] // eslint-disable-line @typescript-eslint/no-explicit-any
-  subreddit: string
-}
-
 export const mapProps = ({ location }: RouteComponentProps) => ({
   subreddit,
-}: ReduxState): MapProps => {
+}: ReduxState) => {
   const { value } =
     location.search === '' ? { value: '' } : parse(location.search)
   const posts = queries.getPosts(subreddit.children)
   return { isLoading: subreddit.isLoading, posts, subreddit: value }
 }
+
+export type MapProps = ReturnType<typeof mapProps>
 
 export type MapDispatch = {
   fetchSubreddit: (subreddit: string) => Promise<SubRedditModel>
