@@ -15,11 +15,11 @@ export type ReduxState = {
   subreddit: SubredditState
 }
 
-export const configureStore = (initialState?: ReduxState) => {
-  const rootReducer = combineReducers({
-    subreddit,
-  })
+export const rootReducer = combineReducers({
+  subreddit,
+})
 
+export const configureStore = (initialState?: ReduxState) => {
   return createStore(
     rootReducer,
     initialState || {},
