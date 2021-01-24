@@ -3,18 +3,23 @@ import os from 'os'
 import { Configuration } from 'webpack'
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 // TODO https://github.com/TypeStrong/fork-ts-checker-webpack-plugin/pull/556
 // import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const TerserPlugin = require('terser-webpack-plugin')
 
 const cpus = os.cpus().length
 const tsLoaderWorkers = cpus > 3 ? cpus - 2 : 1
 
-const config: Configuration = {
+type DevServer = {
+  [key: string]: any // eslint-disable-line @typescript-eslint/no-explicit-any
+}
+
+const config: Configuration & DevServer = {
   devtool: 'source-map',
   entry: {
     app: `${__dirname}/src/App.tsx`,
