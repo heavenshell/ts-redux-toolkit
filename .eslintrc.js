@@ -16,8 +16,7 @@ module.exports = {
     'plugin:import/warnings',
     'plugin:import/typescript',
     'plugin:prettier/recommended',
-    'prettier/react',
-    'prettier/@typescript-eslint',
+    'prettier',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
