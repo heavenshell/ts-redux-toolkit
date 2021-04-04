@@ -124,7 +124,8 @@
     "test": "jest --maxWorkers=1",
     "screenshot": "storycap --serverCmd 'start-storybook -p 6006' --serverTimeout 100000 http://localhost:6006 -i '**/regression'",
     "release:prepare": "shipjs prepare",
-    "release:trigger": "shipjs trigger"
+    "release:trigger": "shipjs trigger",
+    "prepare": "husky install"
   },
   "jest": {
     "setupFilesAfterEnv": [
@@ -149,11 +150,6 @@
       "ts-jest": {
         "tsconfig": "<rootDir>/configs/tsconfig.test.json"
       }
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
     }
   }
 }
