@@ -3,10 +3,16 @@ import * as yup from 'yup'
 import { FormikHelpers } from 'formik'
 import { action } from '@storybook/addon-actions'
 import { text } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
+import { Story, Meta } from '@storybook/react/types-6-0'
 import { image, internet, lorem } from 'faker'
 
-import Subreddit, { Values } from './Subreddit'
+import Subreddit, { Values, Props } from './Subreddit'
+
+const story: Meta = {
+  title: 'pages/Subreddit',
+  component: Subreddit,
+  argTypes: {},
+}
 
 const handleSubmit = (eventName = 'onSubmit', timeout = 2000) => (
   values: Values,
@@ -29,43 +35,62 @@ const mockData = Array.from(new Array(10), () => ({
   permalink: internet.url(),
 }))
 
-storiesOf('pages/Subreddit', module)
-  .add('default', () => (
-    <Subreddit
-      initialValues={{ subreddit: text('subreddit', 'text') }}
-      isLoading={false}
-      onSubmit={handleSubmit()}
-      validationSchema={validationSchema}
-      posts={mockData}
-      onLinkClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
-        e.preventDefault()
-        action('onLinkClick')(e.target)
-      }}
-    />
-  ))
-  .add('isLoading', () => (
-    <Subreddit
-      initialValues={{ subreddit: '' }}
-      isLoading
-      onSubmit={handleSubmit()}
-      validationSchema={validationSchema}
-      posts={[]}
-      onLinkClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
-        e.preventDefault()
-        action('onLinkClick')(e.target)
-      }}
-    />
-  ))
-  .add('no data', () => (
-    <Subreddit
-      initialValues={{ subreddit: '' }}
-      isLoading={false}
-      onSubmit={handleSubmit()}
-      validationSchema={validationSchema}
-      posts={[]}
-      onLinkClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
-        e.preventDefault()
-        action('onLinkClick')(e.target)
-      }}
-    />
-  ))
+const Template: Story<Props> = (args) => <Subreddit {...args} />
+
+export const component = Template.bind({})
+component.args = {
+  initialValues: { subreddit: text('subreddit', 'text') },
+  isLoading: false,
+  onSubmit: handleSubmit(),
+  validationSchema,
+  posts: mockData,
+  onLinkClick: (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    action('onLinkClick')(e.target)
+  },
+}
+component.storyName = 'default'
+
+export const regression = Template.bind({})
+regression.args = {
+  initialValues: { subreddit: text('subreddit', 'text') },
+  isLoading: false,
+  onSubmit: handleSubmit(),
+  validationSchema,
+  posts: mockData,
+  onLinkClick: (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    action('onLinkClick')(e.target)
+  },
+}
+regression.storyName = 'regression'
+
+export const isLoading = Template.bind({})
+isLoading.args = {
+  initialValues: { subreddit: '' },
+  isLoading: true,
+  onSubmit: handleSubmit(),
+  validationSchema,
+  posts: [],
+  onLinkClick: (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    action('onLinkClick')(e.target)
+  },
+}
+isLoading.storyName = 'isLoading'
+
+export const noData = Template.bind({})
+noData.args = {
+  initialValues: { subreddit: '' },
+  isLoading: false,
+  onSubmit: handleSubmit(),
+  validationSchema,
+  posts: [],
+  onLinkClick: (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    action('onLinkClick')(e.target)
+  },
+}
+noData.storyName = 'no data'
+
+export default story
