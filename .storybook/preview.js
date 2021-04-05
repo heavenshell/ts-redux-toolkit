@@ -1,37 +1,8 @@
 import React from 'react'
-import { configure, addDecorator } from '@storybook/react'
-import { withKnobs, boolean } from '@storybook/addon-knobs'
 import { addParameters } from '@storybook/react'
 import { withScreenshot } from 'storycap'
 
-import { Global, css } from '@emotion/core'
-import { ThemeProvider as StyledThemeProvider } from '@emotion/react'
-
-const globalStyle = css`
-  * {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-      Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue,
-      Hiragino Kaku Gothic ProN, Yu Gothic, Meiryo, sans-serif;
-  }
-`
-
-const theme = {}
-
-addDecorator(withKnobs)
-addDecorator(getStory => {
-  return (
-    <StyledThemeProvider theme={theme}>
-      <Global styles={globalStyle} />
-      {getStory()}
-    </StyledThemeProvider>
-  )
-})
-
-addDecorator(
-  withScreenshot({
-    viewport: { width: 1280, height: 800 },
-  })
-)
+import '../src/index.less'
 
 addParameters({
   viewports: {
@@ -65,3 +36,8 @@ addParameters({
     },
   },
 })
+
+// Storycap
+export const decorators = [
+  withScreenshot,
+]
