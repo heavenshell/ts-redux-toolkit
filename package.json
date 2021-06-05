@@ -109,7 +109,7 @@
   },
   "resolutions": {
     "@types/react": "17.0.9",
-    "@types/react-dom": "17.0.5",
+    "@types/react-dom": "17.0.6",
     "@types/hoist-non-react-statics": "3.3.1",
     "@babel/preset-env": "7.14.4",
     "hoist-non-react-statics": "^3.3.0"
