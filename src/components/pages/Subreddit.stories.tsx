@@ -14,15 +14,14 @@ const story: Meta = {
   argTypes: {},
 }
 
-const handleSubmit = (eventName = 'onSubmit', timeout = 2000) => (
-  values: Values,
-  formikHelpers: FormikHelpers<Values>
-) => {
-  setTimeout(() => {
-    formikHelpers.setSubmitting(false)
-    action(eventName)(values)
-  }, timeout)
-}
+const handleSubmit =
+  (eventName = 'onSubmit', timeout = 2000) =>
+  (values: Values, formikHelpers: FormikHelpers<Values>) => {
+    setTimeout(() => {
+      formikHelpers.setSubmitting(false)
+      action(eventName)(values)
+    }, timeout)
+  }
 
 const validationSchema = yup.object().shape({
   subreddit: yup.string().required(),

@@ -9,14 +9,14 @@ import { Props as ViewProps } from '../components/pages/Subreddit'
 import { ReduxState } from '../modules'
 import { fetchSubreddit, queries, SubRedditModel } from '../modules/subreddit'
 
-export const mapProps = ({ location }: RouteComponentProps) => ({
-  subreddit,
-}: ReduxState) => {
-  const { value } =
-    location.search === '' ? { value: '' } : parse(location.search)
-  const posts = queries.getPosts(subreddit.children)
-  return { isLoading: subreddit.isLoading, posts, subreddit: value }
-}
+export const mapProps =
+  ({ location }: RouteComponentProps) =>
+  ({ subreddit }: ReduxState) => {
+    const { value } =
+      location.search === '' ? { value: '' } : parse(location.search)
+    const posts = queries.getPosts(subreddit.children)
+    return { isLoading: subreddit.isLoading, posts, subreddit: value }
+  }
 
 export type MapProps = ReturnType<typeof mapProps>
 
