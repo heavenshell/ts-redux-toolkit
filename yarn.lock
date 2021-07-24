@@ -5512,10 +5512,10 @@ ansi-to-html@^0.6.11:
   dependencies:
     entities "^1.1.2"
 
-antd@4.16.7:
-  version "4.16.7"
-  resolved "https://registry.yarnpkg.com/antd/-/antd-4.16.7.tgz#c51fb143288adb8b008a786efe8d5df13320ac4c"
-  integrity sha512-9XQnTpQ21zqnXWAvFvt1mm0j5+r4E7N/eK0kSEBqxuoTCzTrrn5iwhXFEZ2htJx9QJFlihST/T1Wd8JzRf9J3Q==
+antd@4.16.8:
+  version "4.16.8"
+  resolved "https://registry.yarnpkg.com/antd/-/antd-4.16.8.tgz#0a81f846eb6b356159839d18247b713d04b526d6"
+  integrity sha512-xM1zheIYvS/0x05sM3Yj5cwBu6TjzS7RdwQug1bgbtDAk94dacuFvdLa4PjsvEiG6kz0uNzaaIaDBis7LRH5hA==
   dependencies:
     "@ant-design/colors" "^6.0.0"
     "@ant-design/icons" "^4.6.2"
@@ -8052,10 +8052,10 @@ data-urls@^2.0.0:
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
 
-date-fns@2.22.1:
-  version "2.22.1"
-  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.22.1.tgz#1e5af959831ebb1d82992bf67b765052d8f0efc4"
-  integrity sha512-yUFPQjrxEmIsMqlHhAhmxkuH769baF21Kk+nZwZGyrMoyLA+LugaQtC0+Tqf9CBUUULWwUJt6Q5ySI3LJDDCGg==
+date-fns@2.23.0:
+  version "2.23.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.23.0.tgz#4e886c941659af0cf7b30fafdd1eaa37e88788a9"
+  integrity sha512-5ycpauovVyAk0kXNZz6ZoB9AYMZB4DObse7P3BPWmyEjXNORTI8EJ6X0uaSAq4sCHzM1uajzrkr6HnsLQpxGXA==
 
 date-fns@^2.15.0:
   version "2.16.1"
