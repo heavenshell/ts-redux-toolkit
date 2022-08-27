@@ -9,7 +9,7 @@
     "@emotion/react": "11.10.0",
     "@emotion/styled": "11.10.0",
     "@reduxjs/toolkit": "1.8.5",
-    "antd": "4.22.6",
+    "antd": "4.22.8",
     "axios": "0.27.2",
     "date-fns": "2.29.2",
     "emotion": "11.0.0",
