@@ -11,7 +11,7 @@
     "@reduxjs/toolkit": "1.9.5",
     "antd": "4.24.9",
     "axios": "0.27.2",
-    "date-fns": "2.29.3",
+    "date-fns": "2.30.0",
     "emotion": "11.0.0",
     "formik": "2.2.9",
     "libreact": "2.13.3",
