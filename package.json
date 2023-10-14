@@ -110,7 +110,7 @@
   "resolutions": {
     "@types/react": "17.0.66",
     "@types/react-dom": "17.0.21",
-    "@types/hoist-non-react-statics": "3.3.2",
+    "@types/hoist-non-react-statics": "3.3.3",
     "@babel/preset-env": "7.22.20",
     "hoist-non-react-statics": "^3.3.0"
   },
