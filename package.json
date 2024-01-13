@@ -111,7 +111,7 @@
     "@types/react": "17.0.66",
     "@types/react-dom": "17.0.21",
     "@types/hoist-non-react-statics": "3.3.5",
-    "@babel/preset-env": "7.23.7",
+    "@babel/preset-env": "7.23.8",
     "hoist-non-react-statics": "^3.3.0"
   },
   "scripts": {
